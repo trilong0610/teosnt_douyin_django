@@ -1,0 +1,53 @@
+{% extends 'douyin/base.html' %}
+{% load humanize %}
+{% load static %}
+
+
+{% block navbar %}
+<nav class="navbar navbar-light navbar-expand-md" style="margin: 20px 40px;">
+    <div class="container-fluid"><a class="navbar-brand" href=""
+            style="color: var(--light);font-size: 35px;">TapGo</a><button data-toggle="collapse" class="navbar-toggler"
+            data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                class="navbar-toggler-icon"></span></button>
+    </div>
+</nav>
+{% endblock navbar %}
+
+{% block content %}
+<div class="container-fluid shadow-none" style="padding: 0 0;padding-bottom: 5px;">
+    <!-- Start: row-form-login -->
+    <div class="row d-flex justify-content-lg-center mb-3" style="margin: 0 auto;width: 100%;">
+        <!-- DIV Tải video chưa edit -->
+        <div class="col-lg-6 col-sm-12 col-12 col-md-6">
+            <div class=" shadow-sm p-5" style="border-radius: 25px;background: var(--white);margin: 40px 0;">
+                <div class="text-center">
+                    <h4 class="text-dark mb-4" style="color: rgb(0,0,0);">Không Logo</h4>
+                </div><!-- Start: form-login -->
+                <form id="form-video" class="user" style="margin-top: 40px;">
+                    {% csrf_token %}
+                    <!-- Start: user -->
+                    <div class="form-group row">
+                        <input name="url" id="url-video" class="form-control form-control-user" type="text"
+                            placeholder="Liên kết video">
+                            <p class="text-dark" style="font-size: 12px; margin: 5px 20px;color:red">
+                                (...插画 https://v.douyin.com/.../ 复制此链接...)
+                            </p>
+                    </div><!-- End: user -->
+                    
+                    
+                    <!-- Start: btn-login -->
+                    <hr>
+                </form><!-- End: form-login -->
+                <button id="btn-video" class="btn btn-primary btn-block text-white btn-user"
+                        style="margin-top: 40px;">
+                        Tìm video
+                </button><!-- End: btn-login -->
+                <div id="div-get-file">
+
+                </div>
+            </div>
+        </div>
+        <!-- END DIV Tải video chưa edit -->
+    </div><!-- End: row-form-login -->
+</div>
+{% endblock content %}

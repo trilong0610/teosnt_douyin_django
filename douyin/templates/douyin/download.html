@@ -1,0 +1,56 @@
+{% extends 'douyin/base.html' %}
+{% load humanize %}
+{% load static %}
+
+
+{% block navbar %}
+<nav class="navbar navbar-light navbar-expand-md" style="margin: 20px 40px;">
+    <div class="container-fluid"><a class="navbar-brand" href=""
+            style="color: var(--light);font-size: 35px;">TapGo</a><button data-toggle="collapse" class="navbar-toggler"
+            data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                class="navbar-toggler-icon"></span></button>
+    </div>
+</nav>
+{% endblock navbar %}
+
+{% block content %}
+<div class="container-fluid shadow-none" style="padding: 0 0;padding-bottom: 5px;">
+    <!-- Start: row-form-login -->
+    <div class="row d-flex justify-content-lg-center mb-3" style="margin: 0 auto;width: 100%;">
+
+        <!-- DIV Chức năng -->
+        <div class="col-lg-6 col-sm-12 col-12 col-md-12">
+            <div class=" shadow-sm p-5" style="border-radius: 25px;background: var(--white);margin: 30px 0;">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12 col-12 col-md-6">
+                        <img style="border-radius: 25px;background: var(--white);"
+                        src={{img}},
+                        width="100%"
+                        height="100%">
+
+                    </div><!-- Start: form-login -->
+                    <div class="col-lg-8 col-sm-12 col-12 col-md-6">
+                        <h4 class="text-dark mb-4" style="color: rgb(0,0,0); margin: 20px 20px">{{desc}}</h4>
+                        <p class="text-dark mb-1" style="color: rgb(0,0,0);margin: 20px 20px">Thời gian: {{duration}}</p>
+                    </div>
+                </div>
+
+                <form method="post" action="{% url 'download_video' %}" class="user" style="margin-top: 40px;">
+                    {% csrf_token %}
+                    <!-- Start: user -->
+                    <div class="form-group row">
+                        <input name="video_id" id="url-video" value={{id}} type="hidden">
+                    </div><!-- End: user -->
+                    <!-- Start: btn-login -->
+                    <button class="btn btn-primary btn-block text-white btn-user" type="submit"
+                        style="margin-top: 10px;">
+                        Tải video không logo
+                    </button><!-- End: btn-login -->
+                </form><!-- End: form-login -->
+
+            </div>
+        </div>
+        <!-- END DIV Chức năng -->
+    </div><!-- End: row-form-login -->
+</div>
+{% endblock content %}
