@@ -85,7 +85,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -128,13 +127,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 MEDIA_ROOT = os.path.join(BASE_DIR, "assets/media")
 MEDIA_URL = 'assets/media/'
-
-CSRF_TRUSTED_ORIGINS = ['https://4919-1-52-147-135.ap.ngrok.io']
-
-try:
-    HOSTNAME = socket.gethostname()
-except:
-    HOSTNAME = 'http://127.0.0.1:8000'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'  # new

@@ -25,8 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home.as_view(), name='upload'),
     path('no_edit/', views.downVideoNoEdit.as_view(), name='no_edit'),
-    path('add_author/', views.downVideoAuthor.as_view(), name='add_author'),
-    path('get_video/<str:video_id>', views.get_video.as_view(), name='get_video'),
-    path('download_video/', views.download_video_response.as_view(), name='download_video')
+    path('get_code/<str:code>', views.get_code.as_view(), name='get_code'),
+    path('create_code/', views.create_code.as_view(), name='create_code'),
+    path('check_code/<str:code>', views.check_code.as_view(), name='check_code')
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

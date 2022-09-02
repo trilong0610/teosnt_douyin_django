@@ -6,9 +6,8 @@
 {% block navbar %}
 <nav class="navbar navbar-light navbar-expand-md" style="margin: 20px 40px;">
     <div class="container-fluid"><a class="navbar-brand" href=""
-            style="color: var(--light);font-size: 35px;">TapGo</a><button data-toggle="collapse" class="navbar-toggler"
-            data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
-                class="navbar-toggler-icon"></span></button>
+            style="color: var(--light);font-size: 35px;">Tèo's Douyin</a>
+
     </div>
 </nav>
 {% endblock navbar %}
@@ -18,33 +17,60 @@
     <!-- Start: row-form-login -->
     <div class="row d-flex justify-content-lg-center mb-3" style="margin: 0 auto;width: 100%;">
         <!-- DIV Tải video chưa edit -->
-        <div class="col-lg-6 col-sm-12 col-12 col-md-6">
+        <div class="col-lg-6 col-sm-12 col-12 col-md-12">
             <div class=" shadow-sm p-5" style="border-radius: 25px;background: var(--white);margin: 40px 0;">
                 <div class="text-center">
-                    <h4 class="text-dark mb-4" style="color: rgb(0,0,0);">Không Logo</h4>
+                    <h4 class="text-dark mb-4" style="color: rgb(0,0,0);">Tải video Douyin không Logo</h4>
                 </div><!-- Start: form-login -->
-                <form id="form-video" class="user" style="margin-top: 40px;">
+                <form method="post" action="{% url 'no_edit' %}" id="form-video" class="user" style="margin-top: 40px;">
                     {% csrf_token %}
                     <!-- Start: user -->
+
+{#                    Row url video#}
                     <div class="form-group row">
+                        <div class="col-lg-12 col-sm-12 col-12 col-md-12">
                         <input name="url" id="url-video" class="form-control form-control-user" type="text"
-                            placeholder="Liên kết video">
+                            placeholder="Nhập liên kết video">
                             <p class="text-dark" style="font-size: 12px; margin: 5px 20px;color:red">
                                 (...插画 https://v.douyin.com/.../ 复制此链接...)
                             </p>
-                    </div><!-- End: user -->
+                        </div>
+                    </div>
+{#                    Row code#}
+                        <div class="row">
+                            <div class="col-lg-8 col-sm-12 col-12 col-md-8">
+                                <input name="code" id="code-active" class="form-control form-control-user" type="number"
+                                    placeholder="Nhập code" style="margin: 10px 0;">
+                            </div><!-- Start: form-login -->
+                            <div class="col-lg-4 col-sm-12 col-12 col-md-4">
+{#                                Btn Lay code #}
+                                <button id="btn-code" class="btn btn-primary btn-block text-white btn-user" style="margin: 10px 0;">
+                                    Lấy code
+                                </button><!-- End: btn-login -->
+                            </div>
+                        </div>
+                    <!-- End: user -->
                     
                     
                     <!-- Start: btn-login -->
                     <hr>
                 </form><!-- End: form-login -->
+
+{#                button tai video #}
                 <button id="btn-video" class="btn btn-primary btn-block text-white btn-user"
                         style="margin-top: 40px;">
-                        Tìm video
+                        Tải video
                 </button><!-- End: btn-login -->
                 <div id="div-get-file">
 
                 </div>
+                <div style="margin: 20px 10px;">
+                    <a rel="nofollow" target="_blank" rel="noopener noreferrer" style="font-size: 13px;color: #3d9cea"
+                       href="https://snaptik.app/landing/how-to-download-tik-tok-video-without-watermark-on-iphones">
+                        Hướng dẫn tải video iOS (Thay https://snaptik.app trong bài thành Tèo's Douyin)
+                    </a>
+                </div>
+
             </div>
         </div>
         <!-- END DIV Tải video chưa edit -->
