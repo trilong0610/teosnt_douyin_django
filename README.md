@@ -1,1 +1,1 @@
-pip install proglog, requests, django, imageio, numpy, imageio_ffmpeg, decorator, dnspython, djongo, pymongo==3.12.3
+Download video Douyin no watermark and FullHD quality
